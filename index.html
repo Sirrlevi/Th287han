@@ -1,11 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Support Center</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -27,54 +26,31 @@
             text-align: center;
         }
 
-        .ig-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .ig-icon {
-            width: 34px;
-            height: 34px;
-        }
-
-        .ig-icon rect,
-        .ig-icon circle {
-            stroke: #000;
-            stroke-width: 1.7;
-            fill: none;
-        }
-
-        .ig-icon .dot {
-            fill: #000;
-            stroke: none;
-        }
-
-        .divider {
-            width: 1.4px;
-            height: 36px;
-            background: #000;
-            opacity: 0.55;
-        }
-
-        .ig-text {
-            font-family: 'Billabong', cursive;
-            font-size: 46px;
-            color: #000;
-            line-height: 1;
-            margin-top: 2px;
-            user-select: none;
+        .header img {
+            height: 40px;
+            width: auto;
         }
 
         .search-container {
             max-width: 600px;
             margin: 20px auto;
             padding: 0 16px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
         }
 
         .search-box {
             width: 100%;
-            padding: 8px 12px;
+            padding: 8px 12px 8px 40px;
             font-size: 14px;
             border: 1px solid #dbdbdb;
             border-radius: 3px;
@@ -229,30 +205,70 @@
         }
 
         .footer {
-            max-width: 600px;
-            margin: 40px auto 20px;
-            padding: 0 16px;
+            background: #fafafa;
+            padding: 40px 20px 20px;
+            margin-top: 50px;
         }
 
         .footer-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px 16px;
-            margin-bottom: 12px;
+            gap: 8px 16px;
+            margin-bottom: 16px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-link {
-            font-size: 11px;
-            color: #8e8e8e;
+            font-size: 12px;
+            color: #00376b;
             text-decoration: none;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
         }
 
         .footer-copyright {
             text-align: center;
-            font-size: 11px;
-            color: #8e8e8e;
+            font-size: 12px;
+            color: #000;
+            margin-top: 16px;
+            font-weight: 400;
+        }
+
+        .footer-language {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 16px;
+            margin-top: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-language a {
+            font-size: 12px;
+            color: #737373;
+            text-decoration: none;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .footer-language a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-language .active {
+            color: #262626;
+            font-weight: 600;
+            opacity: 1;
         }
 
         .verification-screen {
@@ -439,19 +455,14 @@
 </head>
 <body>
     <div class="header">
-        <div class="ig-container">
-            <svg class="ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle class="dot" cx="17.2" cy="6.8" r="1"/>
-            </svg>
-            <div class="divider"></div>
-            <div class="ig-text">Instagram</div>
-        </div>
+        <img src="https://files.catbox.moe/5iyrej.png" alt="Instagram">
     </div>
 
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="🔍 How can we help?" readonly>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#8e8e8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="text" class="search-box" placeholder="How can we help?" readonly>
     </div>
 
     <div class="main-container" id="selectionScreen">
@@ -584,7 +595,22 @@
             <a href="#" class="footer-link">TERMS</a>
             <a href="#" class="footer-link">PRIVACY</a>
         </div>
+        
         <div class="footer-copyright">© 2025 INSTAGRAM, INC.</div>
+        
+        <div class="footer-language">
+            <a href="#" class="active">ENGLISH (US)</a>
+            <a href="#">ENGLISH (UK)</a>
+            <a href="#">हिन्दी</a>
+            <a href="#">ਪੰਜਾਬੀ</a>
+            <a href="#">اردو</a>
+            <a href="#">ગુજરાતી</a>
+            <a href="#">বাংলা</a>
+            <a href="#">தமிழ்</a>
+            <a href="#">తెలుగు</a>
+            <a href="#">മലയാളം</a>
+            <a href="#">ಕನ್ನಡ</a>
+        </div>
     </div>
 
     <script>
